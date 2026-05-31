@@ -565,12 +565,7 @@
           </group>
           <text variable="URL" prefix="Режим доступа: "/>
           <group prefix=" (" suffix=")">
-            <text value="дата обращения: "/>
-            <date variable="accessed">
-              <date-part name="day" suffix="."/>
-              <date-part name="month" suffix="."/>
-              <date-part name="year"/>
-            </date>
+            <text value="дата обращения: 30.05.2026"/>
           </group>
         </group>
       </else>
