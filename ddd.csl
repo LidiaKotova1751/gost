@@ -9,7 +9,7 @@
     <author>
       <name>Roman Raspopov, Рычков В.А., bibliostyle.ru</name>
 
-      <uri/>
+      <uri/> 
     </author>
     <category citation-format="numeric"/>
     <category field="generic-base"/>
@@ -554,35 +554,26 @@
       <else>
         <group delimiter=". – ">
           <group delimiter=" / ">
-            <group delimiter=". ">
-              <group delimiter=" : ">
-                <text macro="author-title"/>
-                <text variable="collection-title"/>
-                <text macro="number-of-volumes"/>
-              </group>
-              <text macro="volume"/>
-              <text variable="title-short"/>
+            <group delimiter=" : ">
+              <text macro="author-title" suffix=" [Электронный ресурс]"/>
+              <text variable="genre"/>
             </group>
             <group delimiter=" ">
-              <text macro="second-position-creators"/>
+              <text macro="second-position-authors-only"/>
               <text variable="note"/>
             </group>
           </group>
-          <text macro="publisher"/>
-          <text macro="collection-number"/>
-          <text macro="pages-or-volumes"/>
-          <choose>
-            <if variable="accessed">
-              <group delimiter=". – ">
-                <text macro="URL"/>
-                <text macro="online"/>
-              </group>
-            </if>
-          </choose>
+          <text variable="URL" prefix="Режим доступа: "/>
+          <group prefix=" (" suffix=")">
+            <text value="дата обращения: "/>
+            <date variable="accessed">
+              <date-part name="day" suffix="."/>
+              <date-part name="month" suffix="."/>
+              <date-part name="year"/>
+            </date>
+          </group>
         </group>
       </else>
-    </choose>
-  </macro>
 
 <!--_______________________________________________________________________________
     _________ Непосредтсвенно БИБЛИОГРАФИЯ с сортировкой и локализацией ___________
